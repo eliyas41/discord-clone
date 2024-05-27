@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
 
@@ -21,14 +21,6 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
-      <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
           <ThemeProvider
           attribute="class"
           defaultTheme="dark"
